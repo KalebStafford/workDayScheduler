@@ -1,12 +1,14 @@
-// Date and Time.
-let date = false;
-let now = moment().format("LLLL");
-let _12pm = moment().format("A");
-let _12am = moment().format("a");
-if (date) { _12pm = 13; _12am = 1; }
-let currentDay = $("#currentDay");
-currentDay.text(now);
-
+$(document).ready(function () {
+ 
+    // Date and Time.
+    let date = false;
+    let now = moment().format("LLLL");
+    let _12pm = moment().format("A");
+    let _12am = moment().format("a");
+    if (date) { _12pm = 13; _12am = 1; }
+    let currentDay = $("#currentDay");
+    currentDay.text(now);
+ 
     // Stores the user input into local storage.
     $(".btn").click(function () {
         let _6am = document.getElementsById("6am").value;
@@ -36,3 +38,33 @@ currentDay.text(now);
         let _6pm = document.getElementById("6pm").value;
         localStorage.setItem("in6pm", _6pm);
     });
+ 
+    // Retrieves the user input from local storage.
+    // You can refresh and the information is still in the textbox.
+    let out6am = localStorage.getItem("in6am");
+    document.getElementById("6am").value = out6am;
+    let out7am = localStorage.getItem("in7am");
+    document.getElementById("7am").value = out7am;
+    let out8am = localStorage.getItem("in8am");
+    document.getElementById("8am").value = out8am;
+    let out9am = localStorage.getItem("in9am");
+    document.getElementById("9am").value = out9am;
+    let out10am = localStorage.getItem("in10am");
+    document.getElementById("10am").value = out10am;
+    let out11am = localStorage.getItem("in11am");
+    document.getElementById("11am").value = out11am;
+    let out12pm = localStorage.getItem("in12pm");
+    document.getElementById("12pm").value = out12pm;
+    let out1pm = localStorage.getItem("in1pm");
+    document.getElementById("1pm").value = out1pm;
+    let out2pm = localStorage.getItem("in2pm");
+    document.getElementById("2pm").value = out2pm;
+    let out3pm = localStorage.getItem("in3pm");
+    document.getElementById("3pm").value = out3pm;
+    let out4pm = localStorage.getItem("in4pm");
+    document.getElementById("4pm").value = out4pm;
+    let out5pm = localStorage.getItem("in5pm");
+    document.getElementById("5pm").value = out5pm;
+    let out6pm = localStorage.getItem("in6pm");
+    document.getElementById("6pm").value = out6pm;
+});
